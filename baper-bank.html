@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new deposite page</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1 class="text-center mt-5">Let's get some <span class="text-danger text-blod">Mooooney!!</span></h1>
+
+    <div class="d-flex container justify-content-center mt-5">
+        <div class=" text-white col-2  mx-2 px-5 py-2  bg-danger" id="deposit">
+            <h3>Deposit</h3>
+            <h2 id="diposit-total">00</h2>
+        </div>
+        <div class=" text-white col-2  mx-2 px-5 py-2  bg-info" id="withdrow">
+            <h3>withdrow</h3>
+            <h2>$<span id="withdrowtotal">00</span></h2>
+        </div>
+        <div class=" text-white col-2  mx-2 px-5 py-2  bg-dark">
+            <h3>Blance</h3>
+            <h2>$<span id="blance">00</span></h2>
+        </div>
+    </div>
+
+    <div class="mt-5 d-flex justify-content-center">
+        <div class="col-3 bg-info p-3 mx-2" id="input-deposit">
+            <h3>please Deposit</h3>
+            <input id="deposit-input" type="text" class="d-block my-3 w-75" placeholder="enter your deposite">
+            <button id="diposit-btn" class="btn btn-danger">Deposite</button>
+        </div>
+        <div class="col-3 bg-info p-3 mx-2">
+            <h3>please withdrow</h3>
+            <input id="withdrow-input" type="text" class="d-block my-3 w-75" placeholder="enter your withdrow">
+            <button id="withdrow-btn" class="btn btn-danger">withdrow</button>
+        </div>
+    </div>
+
+    <!--   javasctipt part start -->
+    <script>
+        // diposit part start
+        var diposit = document.getElementById('diposit-btn').addEventListener('click', function () {
+            // diposit-input
+            var dipositinput = document.getElementById('deposit-input').value;
+            var diposittext = parseFloat(dipositinput);
+            // diposit amount
+            var diposittotal = document.getElementById('diposit-total');
+            var dipositinner = diposittotal.innerText;
+            var diposittotalnumber = parseFloat(dipositinner);
+
+            diposittotal.innerText = diposittext + diposittotalnumber;
+
+
+            // input-clear
+            dipositinput.value = "";
+            // diposit total amount
+            var updatetotalbalance = document.getElementById('blance')
+            var updatetotalbalanceinnertext = updatetotalbalance.innerText;
+            var updatetotalbalanceinnerblance = parseFloat(updatetotalbalanceinnertext)
+
+            updatetotalbalance.innerText = updatetotalbalanceinnerblance + diposittext
+        })
+
+        var withdrow = document.getElementById('withdrow-btn').addEventListener('click', function () {
+            // withdrow input 
+            var withdrowinput = document.getElementById('withdrow-input').value;
+            var withdrowtext = parseFloat(withdrowinput);
+
+            // clear 
+            withdrowinput.value = '';
+
+            // withdrow total amount
+            var withdrowbutton = document.getElementById('withdrowtotal');
+            var withdrowprivius = withdrowbutton.innerText;
+            var withdrowpriviusamount = parseFloat(withdrowprivius)
+
+            withdrowbutton.innerText = withdrowpriviusamount + withdrowtext;
+
+
+
+            // total amount
+
+            var updatetotalbalance = document.getElementById('blance')
+            var updatetotalbalanceinnertext = updatetotalbalance.innerText;
+            var updatetotalbalanceinnerblance = parseFloat(updatetotalbalanceinnertext)
+
+            updatetotalbalance.innerText = updatetotalbalanceinnerblance - withdrowtext
+
+
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*  document.getElementById('diposit-btn').addEventListener('click', function () {
+             var diposit = document.getElementById('deposit-input');
+             var dipostiammount = diposit.value;
+             var dipositparts = parseFloat(dipostiammount);
+
+
+             var dipositTOTAL = document.getElementById('diposit-total');
+             var dipositinput = dipositTOTAL.innerText;
+             var dipositinputparts = parseFloat(dipositinput);
+
+             dipositTOTAL.innerText = dipositinputparts + dipositparts;
+
+
+             diposit.value = '';
+
+             // update balace
+             const totalbalace = document.getElementById('blance')
+             var balancetotal = totalbalace.innerText;
+             var priviuscash = parseFloat(balancetotal);
+
+             totalbalace.innerText = priviuscash + dipositparts;
+
+
+             // withdrow part start
+             document.getElementById('withdrow-btn').addEventListener('click', function () {
+
+                 var withdrow = document.getElementById('input-withdrow');
+                 var withdrowinput = withdrow.value;
+                 var withdrowtext = parseFloat(withdrowinput);
+
+                 // withdrow update
+                 var withdrowtotal = document.getElementById('withdrowtotal');
+
+                 withdrowtotal.innerText = withdrowtext;
+             })
+
+
+         }) */
+
+
+
+
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
